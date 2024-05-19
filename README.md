@@ -1,0 +1,1 @@
+# CertifikataDigjitaleX509

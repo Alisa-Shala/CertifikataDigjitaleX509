@@ -46,3 +46,16 @@ print("Socket is listening")# Generate encryption key
         decrypted = cipher_suite.decrypt(received)
         print("\n>> Message sent from client (encrypted):", received)
         print(">> Decrypted message sent from client:", decrypted.decode('utf-8'))
+          if decrypted.decode('utf-8').lower() == "bye":
+            break
+
+        # Get reply from server user, encrypt and send back
+        message = input('Enter message for client: ')
+        encoded_text = cipher_suite.encrypt(message.encode('utf-8'))
+        sslClientSocket.send(encoded_text)
+
+    sslClientSocket.close()
+    if decrypted.decode('utf-8').lower() == "bye":
+        break
+
+serverSocket.close()

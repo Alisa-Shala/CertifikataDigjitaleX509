@@ -22,4 +22,13 @@ except soct.error as err:
 serverPort = 8000
 serverSocket.bind(('127.0.0.1', serverPort))
 serverSocket.listen(5)
+# Wrap socket with SSL
+context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
+context.load_cert_chain(certfile="/Users/anditernava/server.crt", keyfile="/Users/anditernava/server.key")
+
+# Accept client connection
+while True:
+    clientSocket, addr = serverSocket.accept()
+    print('Received connection from:', addr)
+    sslClientSocket = context.wrap_socket(clientSocket, server_side=True)
 print("Socket is listening")

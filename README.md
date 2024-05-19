@@ -1,1 +1,2 @@
 # CertifikataDigjitaleX509
+Ky aplikacion ka nje protokoll komunikimi klient-sever ku dergimi i te dhenave prej klientit deri te serveri behet ne menyr te sigurt permes kriptimit te dhenave permes me certifikaten digjitale X509 qe e perdorim per tu siguaruar se te dhenat jane te besueshme dhe te vlefshme.Kjo certifikat i ka disa atribute qe e identifikojn personin qe e mban ate siq jane emri i organizates qe e ka lleshuar certifikaten,subjektin e celsin publik.
